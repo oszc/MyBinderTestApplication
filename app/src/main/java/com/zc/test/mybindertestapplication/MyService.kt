@@ -8,8 +8,9 @@ import android.util.Log
 
 class MyService : Service() {
     val TAG = "MyService"
-    var aName:String="defaultName"
+    var aName: String = "defaultName"
 
+    /*
     val mBinder =object :IMyAidlInterface.Stub(){
         override fun getName(): String {
             Log.e(TAG,"getName")
@@ -21,14 +22,20 @@ class MyService : Service() {
             aName = name?:"defaultName"
         }
     }
+     */
+    val mBinder =  IMediaServiceBinder(object : onInformationArriveListener {
+        override fun onArrive(code: Int, info: String) {
+            Log.e(TAG, "onArrive $code $info")
+        }
+
+
+    })
 
     override fun onBind(intent: Intent): IBinder {
         return mBinder
     }
 
     override fun bindService(service: Intent?, conn: ServiceConnection, flags: Int): Boolean {
-
-
         return super.bindService(service, conn, flags)
     }
 
