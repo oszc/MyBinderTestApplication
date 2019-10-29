@@ -5,4 +5,3 @@ package com.zc.test.mybindertestapplication
  * Created by zhangchen.
  */
 
-var name=""

@@ -13,12 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*
          IMediaService(object :onInformationArriveListener{
             override fun onArrive(code: Int, info: String) {
                 Log.e(TAG,"$code - $info")
             }
         })
-        name = "MainActivityChanged"
+         */
     }
 
     fun start_info_act(view: View){
