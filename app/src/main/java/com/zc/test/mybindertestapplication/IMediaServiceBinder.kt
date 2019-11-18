@@ -14,7 +14,7 @@ class IMediaServiceBinder(val listener: onInformationArriveListener): Binder(){
         listener.onArrive(code,info)
         reply?.writeNoException()
         reply?.writeString("All right!")
-        return super.onTransact(code, data, reply, flags)
+        return true
     }
 }
 
